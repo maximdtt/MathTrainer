@@ -243,7 +243,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Back">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="0.0"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="MVo-RI-7AJ" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="AJo-Dn-12g"/>
