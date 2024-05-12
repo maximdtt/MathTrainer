@@ -238,6 +238,9 @@
                                 <rect key="frame" x="50" y="50" width="61.666666666666657" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <segue destination="MVo-RI-7AJ" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="AJo-Dn-12g"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 + 22 = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpH-bD-b10">
                                 <rect key="frame" x="100.66666666666669" y="367" width="192" height="48"/>
@@ -304,6 +307,7 @@
                     <navigationItem key="navigationItem" id="OlB-Aq-oMd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uau-me-3Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MVo-RI-7AJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="824" y="-2"/>
         </scene>

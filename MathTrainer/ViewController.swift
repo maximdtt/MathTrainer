@@ -13,11 +13,14 @@ enum MathTypes: Int {
 
 class ViewController: UIViewController {
     
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
     
+    // MARK: - Properties
     
-    //MARK: - Life Cycle
+    private var selectedType: MathTypes = .add
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,12 +28,22 @@ class ViewController: UIViewController {
     }
     
     
-    //MARK: - Actions
+    // MARK: - Actions
     @IBAction func buttonsAction(_ sender: UIButton) {
+        selectedType = MathTypes(rawValue: sender.tag) ?? .add
         performSegue(withIdentifier: "goToNext", sender: sender)
     }
     
-    //MARK: - Methods
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {}
+    
+    // MARK: - Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? TrainViewController {
+            viewController.type = selectedType
+        }
+    }
+    
     private func configureButtons() {
         
         //add shadow
