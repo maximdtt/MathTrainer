@@ -14,6 +14,7 @@
 		31B296032BF0F5E100ED9711 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 31B296022BF0F5E100ED9711 /* Base */; };
 		31B296052BF0F5E200ED9711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B296042BF0F5E200ED9711 /* Assets.xcassets */; };
 		31B296082BF0F5E200ED9711 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 31B296072BF0F5E200ED9711 /* Base */; };
+		FA7994E62BF2068B0065D22B /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7994E52BF2068B0065D22B /* UIBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		31B296042BF0F5E200ED9711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B296072BF0F5E200ED9711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31B296092BF0F5E200ED9711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7994E52BF2068B0065D22B /* UIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				31B295FD2BF0F5E100ED9711 /* SceneDelegate.swift */,
 				31B295FF2BF0F5E100ED9711 /* ViewController.swift */,
 				316F53F32BF120AD009E7F72 /* TrainViewController.swift */,
+				FA7994E52BF2068B0065D22B /* UIBuilder.swift */,
 				31B296012BF0F5E100ED9711 /* Main.storyboard */,
 				31B296042BF0F5E200ED9711 /* Assets.xcassets */,
 				31B296062BF0F5E200ED9711 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7994E62BF2068B0065D22B /* UIBuilder.swift in Sources */,
 				31B296002BF0F5E100ED9711 /* ViewController.swift in Sources */,
 				316F53F42BF120AD009E7F72 /* TrainViewController.swift in Sources */,
 				31B295FC2BF0F5E100ED9711 /* AppDelegate.swift in Sources */,

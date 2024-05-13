@@ -235,9 +235,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAN-rw-ZNv">
-                                <rect key="frame" x="50" y="50" width="61.666666666666657" height="35"/>
+                                <rect key="frame" x="35" y="90" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="tIJ-Fu-k2A"/>
+                                    <constraint firstAttribute="height" constant="30" id="yBK-UN-HUl"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="20"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="MVo-RI-7AJ" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="AJo-Dn-12g"/>
                                 </connections>
@@ -298,13 +305,17 @@
                             <constraint firstItem="xki-jV-OQT" firstAttribute="centerX" secondItem="0SA-1O-8mX" secondAttribute="centerX" constant="60" id="AKK-QM-7q1"/>
                             <constraint firstItem="VpH-bD-b10" firstAttribute="centerX" secondItem="0SA-1O-8mX" secondAttribute="centerX" id="Bbt-0d-z8G"/>
                             <constraint firstItem="xki-jV-OQT" firstAttribute="centerY" secondItem="c7j-mH-4d2" secondAttribute="centerY" id="YeE-fi-3g3"/>
-                            <constraint firstItem="MAN-rw-ZNv" firstAttribute="top" secondItem="yud-XN-zkq" secondAttribute="top" constant="50" id="dFd-4O-jRW"/>
+                            <constraint firstItem="MAN-rw-ZNv" firstAttribute="top" secondItem="yud-XN-zkq" secondAttribute="top" constant="90" id="dFd-4O-jRW"/>
                             <constraint firstItem="c7j-mH-4d2" firstAttribute="top" secondItem="VpH-bD-b10" secondAttribute="bottom" constant="120" id="dfU-Xz-204"/>
-                            <constraint firstItem="MAN-rw-ZNv" firstAttribute="leading" secondItem="yud-XN-zkq" secondAttribute="leading" constant="50" id="uFj-gF-FKH"/>
+                            <constraint firstItem="MAN-rw-ZNv" firstAttribute="leading" secondItem="yud-XN-zkq" secondAttribute="leading" constant="35" id="uFj-gF-FKH"/>
                             <constraint firstItem="c7j-mH-4d2" firstAttribute="centerX" secondItem="0SA-1O-8mX" secondAttribute="centerX" constant="-60" id="zWU-Hf-47H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OlB-Aq-oMd"/>
+                    <connections>
+                        <outletCollection property="buttonsCollection" destination="c7j-mH-4d2" collectionClass="NSMutableArray" id="Qpd-L1-EWL"/>
+                        <outletCollection property="buttonsCollection" destination="xki-jV-OQT" collectionClass="NSMutableArray" id="npJ-nE-dbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uau-me-3Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MVo-RI-7AJ" userLabel="Exit" sceneMemberID="exit"/>
