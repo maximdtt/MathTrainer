@@ -11,22 +11,21 @@ enum MathTypes: Int {
     case add, subtract, multiply, divide
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
     
     // MARK: - Properties
-    
+    private let uiBuilder = UIBuilder()
     private var selectedType: MathTypes = .add
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureButtons()
+
+        uiBuilder.configureButtons(buttonsCollection)
     }
-    
     
     // MARK: - Actions
     @IBAction func buttonsAction(_ sender: UIButton) {
@@ -37,23 +36,9 @@ class ViewController: UIViewController {
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {}
     
     // MARK: - Methods
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? TrainViewController {
             viewController.type = selectedType
         }
     }
-    
-    private func configureButtons() {
-        
-        //add shadow
-        buttonsCollection.forEach { button in
-            button.layer.shadowColor = UIColor.darkGray.cgColor
-            button.layer.shadowOffset = CGSize.init(width: 0, height: 2)
-            button.layer.shadowOpacity = 0.4
-            button.layer.shadowRadius = 3
-        }
-    }
-
 }
-
