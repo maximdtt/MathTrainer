@@ -11,7 +11,7 @@ final class UIBuilder {
     func configureButtons(_ buttons: [UIButton]) {
         
         buttons.forEach { button in
-            button.backgroundColor = .yellow
+            button.backgroundColor = .systemYellow
         }
         
         buttons.forEach { button in

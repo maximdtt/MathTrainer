@@ -22,7 +22,7 @@ final class TrainViewController: UIViewController {
     
     private var counter: Int = 0 {
         didSet {
-            print("count")
+            print("count: \(counter)")
         }
     }
     
@@ -90,7 +90,7 @@ final class TrainViewController: UIViewController {
         
                     rightButton.setTitle(isRightButton ? String(answer) : String(randomAnswer), for: .normal)
                     leftButton.setTitle(isRightButton ? String(randomAnswer) : String(answer), for: .normal)
-        // 
+        
         uiBuilder.configureButtons(buttonsCollection)
     }
     
@@ -106,14 +106,17 @@ final class TrainViewController: UIViewController {
         let isRightAnswer = Int(answer) == self.answer
         
         button.backgroundColor = isRightAnswer ? .green : .red
+        
         if isRightAnswer {
-            counter += 1
+            let isSecondAttempt = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
+            
+            counter += isSecondAttempt ? 0 : 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 
                 self?.configureQuestion()
                 self?.randomNumberButtons()
-                //self?.uiBuilder.configureButtons(buttonsCollection)
+                //uiBuilder.configureButtons(buttonsCollection)
             }
         }
     }
