@@ -90,7 +90,8 @@ final class TrainViewController: UIViewController {
         
                     rightButton.setTitle(isRightButton ? String(answer) : String(randomAnswer), for: .normal)
                     leftButton.setTitle(isRightButton ? String(randomAnswer) : String(answer), for: .normal)
-        
+        // 
+        uiBuilder.configureButtons(buttonsCollection)
     }
     
     private func configureQuestion() {
@@ -107,9 +108,13 @@ final class TrainViewController: UIViewController {
         button.backgroundColor = isRightAnswer ? .green : .red
         if isRightAnswer {
             counter += 1
-            configureQuestion()
-            randomNumberButtons()
-            uiBuilder.configureButtons(buttonsCollection)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                
+                self?.configureQuestion()
+                self?.randomNumberButtons()
+                //self?.uiBuilder.configureButtons(buttonsCollection)
+            }
         }
     }
 }
