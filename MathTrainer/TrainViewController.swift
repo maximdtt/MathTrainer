@@ -90,7 +90,7 @@ final class TrainViewController: UIViewController {
         
                     rightButton.setTitle(isRightButton ? String(answer) : String(randomAnswer), for: .normal)
                     leftButton.setTitle(isRightButton ? String(randomAnswer) : String(answer), for: .normal)
-        
+        // ?
         uiBuilder.configureButtons(buttonsCollection)
     }
     
