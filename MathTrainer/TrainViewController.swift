@@ -17,14 +17,17 @@ final class TrainViewController: UIViewController {
     
     
     @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var counterPoints: UILabel!
+    
     // MARK: - Properties
     private let uiBuilder = UIBuilder()
     
-    private var counter: Int = 0 {
-        didSet {
-            print("count: \(counter)")
-        }
-    }
+    private var counter: Int = 0
+//        didSet {
+//            print("count: \(counter)")
+//        }
+    
     
     private var firstNumber = 0
     private var secondNumber = 0
@@ -66,6 +69,7 @@ final class TrainViewController: UIViewController {
         configureQuestion()
         randomNumberButtons()
         uiBuilder.configureButtons(buttonsCollection)
+//        counterPoints.text = String(counter)
     }
     
     //MARK: - IBActions
@@ -95,8 +99,11 @@ final class TrainViewController: UIViewController {
     }
     
     private func configureQuestion() {
+        
+        
         firstNumber = Int.random(in: 1...99)
         secondNumber = Int.random(in: 1...99)
+        
         
         let question: String = "\(firstNumber) \(sign) \(secondNumber) ="
         questionLabel.text = question
@@ -116,6 +123,7 @@ final class TrainViewController: UIViewController {
                 
                 self?.configureQuestion()
                 self?.randomNumberButtons()
+                self?.counterPoints.text = String(self!.counter)
                 //uiBuilder.configureButtons(buttonsCollection)
             }
         }
