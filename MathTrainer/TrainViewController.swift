@@ -23,6 +23,7 @@ final class TrainViewController: UIViewController {
     private var sign: String = ""
     private var counter: Int = 0
     
+    
     var type: MathTypes = .add {
         didSet {
             switch type {
@@ -80,12 +81,7 @@ final class TrainViewController: UIViewController {
     
     /// генерируем вопрос
     private func configureQuestion() {
-<<<<<<< HEAD
-        
-        
-        
-=======
->>>>>>> 775f1ba4d81e9487ca8c42a6ab5b5f3e73c7b5de
+
         firstNumber = Int.random(in: 1...99)
         secondNumber = generateRandomDivisor(for: firstNumber)
         let question: String = "\(firstNumber) \(sign) \(secondNumber) ="
@@ -106,9 +102,14 @@ final class TrainViewController: UIViewController {
             rightButton.setTitle(String(incorrectAnswer), for: .normal)
         }
     }
+
     
     private func checkAnswer(_ answer: String, for button: UIButton) {
         button.backgroundColor = (Int(answer) == rightAnswer) ? .green : .red
+        
+        
+        (Int(answer) == rightAnswer) ? (counter += 1) : (counter -= 1)
+        counterPoints.text = String(counter)
         
         /// перезапускаем игру
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
