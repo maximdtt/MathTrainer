@@ -101,6 +101,7 @@ final class TrainViewController: UIViewController {
     private func configureQuestion() {
         
         
+        
         firstNumber = Int.random(in: 1...99)
         secondNumber = Int.random(in: 1...99)
         
