@@ -21,9 +21,14 @@ final class TrainViewController: UIViewController {
     private var firstNumber = 0
     private var secondNumber = 0
     private var sign: String = ""
-    private var counter: Int = 0
+    private var counter: Int = 0 {
+        didSet {
+            print(counter)
+            UserDefaults.standard.setValue(counter, forKey: type.key)
+        }
+    }
     
-    
+     
     var type: MathTypes = .add {
         didSet {
             switch type {
@@ -32,9 +37,9 @@ final class TrainViewController: UIViewController {
             case .subtract:
                 sign = "-"
             case.multiply:
-                sign = "*"
+                sign = "x"
             case .divide:
-                sign = "/"
+                sign = ":"
             }
         }
     }
@@ -58,6 +63,10 @@ final class TrainViewController: UIViewController {
         
         uiBuilder.configureButtons(buttonsCollection)
         configureQuestion()
+        
+        if let count = UserDefaults.standard.object(forKey: type.key) as? Int {
+            self.counter = count
+        }
     }
     
     //MARK: - IBActions
@@ -123,3 +132,7 @@ final class TrainViewController: UIViewController {
 // TODO: -
 // 1 Добавить подсчет заработанных очков
 // 2 Добавить логику увеличения и уменьшения очков в случае верного / не верного ответа
+
+extension UserDefaults {
+    static let container = UserDefaults(suiteName: "container")
+}

@@ -124,7 +124,7 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="/">
+                                        <buttonConfiguration key="configuration" style="plain" title=":">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -157,7 +157,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvK-ck-9iy">
                                 <rect key="frame" x="96.666666666666686" y="500" width="80" height="108"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-hn-1Vs">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-hn-1Vs">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
@@ -166,7 +166,7 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="*">
+                                        <buttonConfiguration key="configuration" style="plain" title="x">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -196,11 +196,23 @@
                                     <constraint firstItem="oWK-hn-1Vs" firstAttribute="top" secondItem="FvK-ck-9iy" secondAttribute="top" id="jWN-6j-xa6"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5s-cc-Xh1">
+                                <rect key="frame" x="168.66666666666666" y="759.66666666666663" width="56" height="28.333333333333371"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Clear">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YZd-kN-FRJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WzD-r1-yI6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ve-LI-9Dz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q5s-cc-Xh1" secondAttribute="bottom" constant="30" id="WTY-YK-q8O"/>
                             <constraint firstItem="LcM-ag-ZcQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XwP-Ol-ndx"/>
                             <constraint firstItem="2sP-N9-1YD" firstAttribute="centerY" secondItem="rOh-QN-tE5" secondAttribute="centerY" id="a60-Ue-ZgW"/>
                             <constraint firstItem="FvK-ck-9iy" firstAttribute="centerX" secondItem="rOh-QN-tE5" secondAttribute="centerX" id="bOq-77-bOV"/>
@@ -210,11 +222,16 @@
                             <constraint firstItem="rOh-QN-tE5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-60" id="pAm-Qz-e4j"/>
                             <constraint firstItem="wru-Ly-YaH" firstAttribute="centerY" secondItem="FvK-ck-9iy" secondAttribute="centerY" id="uPQ-Ev-ExC"/>
                             <constraint firstItem="wru-Ly-YaH" firstAttribute="centerX" secondItem="2sP-N9-1YD" secondAttribute="centerX" id="uh0-V2-pyT"/>
+                            <constraint firstItem="q5s-cc-Xh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vKR-kg-uma"/>
                             <constraint firstItem="2sP-N9-1YD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="wbD-1c-6xs"/>
                             <constraint firstItem="rOh-QN-tE5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yAV-3G-PVr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="O1u-Qz-OBY" id="FWe-Pn-nCF"/>
+                        <outlet property="divideCountLabel" destination="cSm-kE-HCq" id="Uko-AP-RUF"/>
+                        <outlet property="multiplyCountLabel" destination="KCh-bE-WvW" id="wwd-si-buq"/>
+                        <outlet property="subtractCountLabel" destination="0H2-wE-g8J" id="kY5-8i-6Zk"/>
                         <outletCollection property="buttonsCollection" destination="Jxk-ox-fX2" collectionClass="NSMutableArray" id="Ggx-t2-vFu"/>
                         <outletCollection property="buttonsCollection" destination="21k-od-1YA" collectionClass="NSMutableArray" id="fUm-pG-XeF"/>
                         <outletCollection property="buttonsCollection" destination="oWK-hn-1Vs" collectionClass="NSMutableArray" id="mTw-4o-0WB"/>
@@ -342,10 +359,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uau-me-3Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MVo-RI-7AJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="823.66412213740455" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="993" y="-99"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
